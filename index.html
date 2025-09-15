@@ -3,59 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arbi-Kit: Инструменты Технического Маркетолога</title>
+    <title>Arbi-Kit v2.0: Dashboard Технического Маркетолога</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Arbi-Kit Dashboard</h1>
-            <p>Набор утилит для автоматизации рутины в арбитраже трафика.</p>
+            <h1>Arbi-Kit Dashboard v2.0</h1>
+            <p>Рабочий стол для автоматизации и анализа в арбитраже трафика.</p>
         </header>
 
-        <section class="tool-card">
-            <h2>1. UTM-генератор</h2>
-            <div class="form-grid">
-                <div class="form-group"><label for="utm-url">URL сайта*</label><input type="text" id="utm-url" placeholder="https://example.com"></div>
-                <div class="form-group"><label for="utm-source">utm_source*</label><input type="text" id="utm-source" placeholder="google"></div>
-                <div class="form-group"><label for="utm-medium">utm_medium*</label><input type="text" id="utm-medium" placeholder="cpc"></div>
-                <div class="form-group"><label for="utm-campaign">utm_campaign*</label><input type="text" id="utm-campaign" placeholder="promo_sale"></div>
-                <div class="form-group"><label for="utm-term">utm_term</label><input type="text" id="utm-term" placeholder="buy_product"></div>
-                <div class="form-group"><label for="utm-content">utm_content</label><input type="text" id="utm-content" placeholder="blue_banner"></div>
-            </div>
-            <textarea id="utm-result" class="result-box" readonly placeholder="Здесь появится готовая ссылка..."></textarea>
-        </section>
+        <div class="dashboard-grid">
+            <!-- UTILITIES COLUMN -->
+            <div class="column">
+                <section class="tool-card">
+                    <h2>1. UTM-генератор</h2>
+                    <div class="form-group"><label for="utm-url">URL сайта*</label><input type="text" id="utm-url" placeholder="https://example.com"></div>
+                    <div class="form-group"><label for="utm-source">utm_source*</label><input type="text" id="utm-source" placeholder="google"></div>
+                    <div class="form-group"><label for="utm-medium">utm_medium*</label><input type="text" id="utm-medium" placeholder="cpc"></div>
+                    <div class="form-group"><label for="utm-campaign">utm_campaign*</label><input type="text" id="utm-campaign" placeholder="promo_sale"></div>
+                    <textarea id="utm-result" class="result-box" readonly placeholder="Здесь появится готовая ссылка..."></textarea>
+                </section>
 
-        <section class="tool-card">
-            <h2>2. Генератор объявлений Google Ads</h2>
-            <div class="form-grid">
-                <div class="form-group"><label for="ad-product">Продукт/Оффер</label><input type="text" id="ad-product" placeholder="Чудо-крем для суставов"></div>
-                <div class="form-group"><label for="ad-benefit">Главное преимущество</label><input type="text" id="ad-benefit" placeholder="Снимает боль за 10 минут"></div>
-                <div class="form-group"><label for="ad-cta">Призыв к действию (CTA)</label><input type="text" id="ad-cta" placeholder="Закажи сейчас со скидкой!"></div>
+                <section class="tool-card">
+                    <h2>2. Генератор Цифровой Личности</h2>
+                    <p class="description">Симулирует создание уникального Fingerprint для нового аккаунта.</p>
+                    <button id="fp-generate-button">Сгенерировать новую личность</button>
+                    <div id="fp-result" class="result-box text-result-box" placeholder="Нажмите кнопку для генерации..."></div>
+                </section>
             </div>
-            <div id="ad-result" class="result-box text-result-box" placeholder="Здесь появятся варианты объявлений..."></div>
-        </section>
 
-        <section class="tool-card">
-            <h2>3. Симулятор Клоаки</h2>
-            <p class="description">Демонстрирует, как трекер отправляет ботов на White Page, а реальных клиентов — на Black Page.</p>
-            <div class="form-grid">
-                <div class="form-group"><label for="cloak-white">URL "Белой" страницы (White Page)</label><input type="text" id="cloak-white" value="https://en.wikipedia.org/wiki/Health"></div>
-                <div class="form-group"><label for="cloak-black">URL "Черной" страницы (Black Page)</label><input type="text" id="cloak-black" value="https://www.google.com/search?q=buy+now"></div>
-            </div>
-            <button id="cloak-button">Перейти по "умной" ссылке</button>
-        </section>
+            <!-- ADS & SEO COLUMN -->
+            <div class="column">
+                <section class="tool-card">
+                    <h2>3. Генератор объявлений Google Ads</h2>
+                    <div class="form-group"><label for="ad-product">Продукт/Оффер</label><input type="text" id="ad-product" placeholder="Крем для суставов"></div>
+                    <div class="form-group"><label for="ad-keyword">Ключевое слово</label><input type="text" id="ad-keyword" placeholder="купить крем для суставов"></div>
+                    <div class="form-group"><label for="ad-cta">Призыв к действию (CTA)</label><input type="text" id="ad-cta" placeholder="Закажи со скидкой!"></div>
+                    <div id="ad-result" class="result-box text-result-box" placeholder="Здесь появятся варианты объявлений..."></div>
+                </section>
 
-        <section class="tool-card">
-            <h2>4. Калькулятор Профита (ROI)</h2>
-            <div class="form-grid calc-grid">
-                <div class="form-group"><label for="calc-spend">Затраты на рекламу ($)</label><input type="number" id="calc-spend" placeholder="1000"></div>
-                <div class="form-group"><label for="calc-leads">Кол-во лидов</label><input type="number" id="calc-leads" placeholder="80"></div>
-                <div class="form-group"><label for="calc-payout">Выплата за лид ($)</label><input type="number" id="calc-payout" placeholder="20"></div>
-                <div class="form-group"><label for="calc-approve">Апрув (%)</label><input type="number" id="calc-approve" placeholder="40"></div>
+                <section class="tool-card">
+                    <h2>4. Live SEO-Анализатор</h2>
+                    <div class="form-group">
+                        <label for="seo-url">URL для анализа</label>
+                        <input type="text" id="seo-url" placeholder="https://google.com">
+                    </div>
+                    <button id="seo-analyze-button">Анализировать</button>
+                    <div id="seo-result" class="result-box text-result-box" placeholder="Введите URL и нажмите 'Анализировать'..."></div>
+                </section>
             </div>
-            <div id="calc-result" class="result-box text-result-box" placeholder="Здесь появятся расчеты..."></div>
-        </section>
+
+            <!-- SIM & CALC COLUMN -->
+            <div class="column">
+                <section class="tool-card">
+                    <h2>5. Симулятор Клоаки</h2>
+                    <p class="description">Демонстрирует, как трекер разделяет трафик.</p>
+                     <div class="form-group">
+                        <label for="cloak-user-type">Тип посетителя:</label>
+                        <select id="cloak-user-type">
+                            <option value="client">Реальный клиент (Бразилия)</option>
+                            <option value="bot">Бот / Модератор (США)</option>
+                        </select>
+                    </div>
+                    <button id="cloak-button">Перейти по "умной" ссылке</button>
+                </section>
+                
+                <section class="tool-card">
+                    <h2>6. Калькулятор Профита (ROI)</h2>
+                    <div class="form-group"><label for="calc-spend">Затраты ($)</label><input type="number" id="calc-spend" placeholder="1000"></div>
+                    <div class="form-group"><label for="calc-leads">Лиды</label><input type="number" id="calc-leads" placeholder="80"></div>
+                    <div class="form-group"><label for="calc-payout">Выплата ($)</label><input type="number" id="calc-payout" placeholder="20"></div>
+                    <div class="form-group"><label for="calc-approve">Апрув (%)</label><input type="number" id="calc-approve" placeholder="40"></div>
+                    <div id="calc-result" class="result-box text-result-box" placeholder="Здесь появятся расчеты..."></div>
+                </section>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
