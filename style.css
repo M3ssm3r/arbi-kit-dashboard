@@ -1,0 +1,93 @@
+:root {
+    --bg-color: #121212;
+    --card-color: #1E1E1E;
+    --text-color: #E0E0E0;
+    --primary-color: #BB86FC;
+    --border-color: #333;
+    --input-bg: #2C2C2C;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 2rem;
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+header h1 {
+    color: var(--primary-color);
+    margin: 0;
+}
+.tool-card {
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+.tool-card h2 {
+    margin-top: 0;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-bottom: 0.5rem;
+    font-size: 0.9em;
+    color: #a0a0a0;
+}
+input, textarea, button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+.result-box {
+    margin-top: 1rem;
+    min-height: 100px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-family: 'Courier New', Courier, monospace;
+}
+.text-result-box {
+    background: var(--input-bg);
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+button {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+button:hover {
+    opacity: 0.9;
+}
+.description {
+    font-size: 0.9em;
+    color: #a0a0a0;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+}
